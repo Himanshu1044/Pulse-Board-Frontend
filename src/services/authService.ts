@@ -3,12 +3,14 @@ import api from "./api";
 export const register = async (
     name: string,
     email: string,
-    password: string
+    password: string,
+    turnstileToken: string
 ) => {
     const response = await api.post("/auth/register", {
         name,
         email,
-        password
+        password,
+        turnstileToken
     });
 
     return response.data;
